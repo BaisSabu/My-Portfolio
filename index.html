@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bais Sabu's Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -13,11 +12,13 @@
         }
         /* Custom styles for section headings to match the new theme */
         .section-heading {
-            @apply text-4xl font-extrabold text-gray-800 mb-6 relative pb-4; /* Changed heading color to gray */
+            /* Changed heading color to gray, adjusted font size to text-4xl from Tailwind */
+            @apply text-4xl font-extrabold text-gray-800 mb-6 relative pb-4;
         }
         .section-heading::after {
             content: '';
-            @apply absolute left-0 bottom-0 w-24 h-1 bg-gray-500 rounded-full; /* Changed heading underline color to gray */
+            /* Changed heading underline color to gray */
+            @apply absolute left-0 bottom-0 w-24 h-1 bg-gray-500 rounded-full;
         }
         /* Card styling with enhanced shadow and hover effects */
         .card {
@@ -25,18 +26,21 @@
         }
         /* Styles for contact links in the hero section */
         .contact-link-hero {
-            @apply flex items-center p-3 rounded-lg bg-gray-700 text-white shadow-md hover:bg-gray-600 transition-colors duration-200; /* Changed button color to gray */
+            /* Changed button color to gray */
+            @apply flex items-center p-3 rounded-lg bg-gray-700 text-white shadow-md hover:bg-gray-600 transition-colors duration-200;
         }
         /* Styles for contact links in the dedicated contact section */
         .contact-link-section {
             @apply flex items-center p-3 rounded-lg bg-white text-gray-800 shadow-md hover:bg-gray-100 transition-colors duration-200 border border-gray-200;
         }
         .contact-link-section svg {
-            @apply text-gray-600 mr-4 flex-shrink-0; /* Changed contact icon color to gray */
+            /* Changed contact icon color to gray */
+            @apply text-gray-600 mr-4 flex-shrink-0;
         }
         /* Skill badge styling with new theme colors */
         .skill-badge {
-            @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:scale-105; /* Changed skill badge color to gray */
+            /* Changed skill badge color to gray */
+            @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:scale-105;
         }
         /* Border line styling for resume sections */
         .border-line {
@@ -44,38 +48,39 @@
         }
     </style>
 </head>
-<!-- Body background with a new pastel gray gradient theme -->
 <body class="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-800 antialiased leading-normal">
-    <!-- Navbar -->
     <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
-            <div class="space-x-6 hidden md:flex">
+            <div id="nav-links" class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">About</a>
                 <a href="#resume" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
                 <a href="#certifications" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
                 <a href="#contact-section" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
             </div>
-            <!-- Mobile menu button (can be implemented with JS for toggle) -->
-            <button class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="flex flex-col space-y-2 mt-4 text-center">
+                <a href="#about" class="block py-2 text-gray-200 hover:text-white transition-colors duration-200">About</a>
+                <a href="#resume" class="block py-2 text-gray-200 hover:text-white transition-colors duration-200">Resume</a>
+                <a href="#certifications" class="block py-2 text-gray-200 hover:text-white transition-colors duration-200">Certifications</a>
+                <a href="#contact-section" class="block py-2 text-gray-200 hover:text-white transition-colors duration-200">Contact</a>
+            </div>
         </div>
     </nav>
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
-        <!-- Hero/Header Section - Full width, more dynamic layout -->
         <header class="bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-            <!-- Profile Picture - Rectangular shape, no border, with shadow, increased size -->
             <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-72 h-72 object-cover shadow-lg">
 
-            <!-- Name, Tagline, and Contact Info -->
             <div class="text-center md:text-left">
                 <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">Bais Sabu</h1>
                 <p class="text-xl lg:text-2xl font-light text-gray-200 mb-8">Committed to growing in the field of cybersecurity.</p>
 
-                <!-- Contact Details in Hero Section -->
                 <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-4 text-lg">
                     <a href="mailto:baissabuofficial@gmail.com" class="contact-link-hero">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
@@ -98,9 +103,8 @@
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <!-- About Section -->
             <section id="about" class="lg:col-span-2 card">
-              <h2 class="section-heading" style="font-size: 2.5rem;">About Me</h2>
+              <h2 class="section-heading text-4xl">About Me</h2>
                 <p class="text-gray-700 leading-relaxed text-lg mb-4">
                    Hello! I'm Bais Sabu, a cybersecurity enthusiast with a strong passion for safeguarding digital systems and data. I specialize in identifying vulnerabilities, analyzing threats, and implementing security measures to protect against cyber attacks. With a solid foundation in cybersecurity principles and hands-on knowledge gained through the EC-Council's Cybersecurity Analyst (CSA) certification, I enjoy solving complex security challenges and building resilient, secure infrastructures. I’m driven to create clean, efficient, and scalable security solutions in today’s evolving threat landscape.
                 </p>
@@ -109,8 +113,7 @@
                 </p>
             </section>
 
-            <!-- Quick Info/Summary Section -->
-            <section class="card flex flex-col justify-between hidden lg:block">
+            <section class="card flex flex-col justify-between">
                 <h2 class="section-heading text-3xl">Quick Info</h2>
                 <ul class="space-y-4 text-gray-700 text-lg">
                     <li><strong>Location:</strong> Kerala, India</li>
@@ -123,24 +126,21 @@
                 </div>
             </section>
 
-            <!-- Resume Section -->
             <section id="resume" class="lg:col-span-3 card">
                 <h2 class="section-heading">Resume</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Education -->
                     <div>
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Education</h3>
-                        <div class="border-line border-gray-400"> <!-- Changed border color to gray -->
+                        <div class="border-line border-gray-400">
                             <h4 class="text-xl font-medium text-gray-800">B. Tech - Civil Engineering</h4>
                             <p class="text-gray-600">Viswajyothi College of Engineering & Technology, Vazhakulam</p>
                             <p class="text-gray-600 text-sm">2017-2021</p>
                         </div>
                     </div>
 
-                    <!-- Experience -->
                     <div>
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Experience</h3>
-                        <div class="border-line border-gray-500"> <!-- Changed border color to gray -->
+                        <div class="border-line border-gray-500">
                             <h4 class="text-xl font-medium text-gray-800">Site Supervisor - Omega Advertising and Sales Promotion</h4>
                             <p class="text-gray-600">2023-2024</p>
                             <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -151,11 +151,10 @@
                         </div>
                     </div>
 
-                    <!-- Projects -->
                     <div class="md:col-span-2">
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Projects</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="border-line border-gray-600"> <!-- Changed border color to gray -->
+                            <div class="border-line border-gray-600">
                                 <h4 class="text-xl font-medium text-gray-800">Refabricated Pavement Blocks Using Recycled Plastic - A Review</h4>
                                 <p class="text-gray-600 text-sm">2021</p>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -163,7 +162,7 @@
                                     <li>Outlined the environmental impact and economic advantages of utilizing recycled plastic in pavement blocks, supporting industry adoption through compelling data analysis.</li>
                                 </ul>
                             </div>
-                            <div class="border-line border-gray-600"> <!-- Changed border color to gray -->
+                            <div class="border-line border-gray-600">
                                 <h4 class="text-xl font-medium text-gray-800">Sloping Gate</h4>
                                 <p class="text-gray-600 text-sm">2019</p>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -173,7 +172,6 @@
                         </div>
                     </div>
 
-                    <!-- Skills -->
                     <div class="md:col-span-2">
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Skills</h3>
                         <div class="flex flex-wrap gap-3">
@@ -194,11 +192,10 @@
                 </div>
             </section>
 
-            <!-- Certifications Section -->
             <section id="certifications" class="lg:col-span-3 card">
                 <h2 class="section-heading">Certifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5"> <!-- Changed background color to gray -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">CSA Certification</h3>
                         <p class="text-gray-600">Issued by EC Council</p>
                         <p class="text-gray-600 text-sm mt-1">2025</p>
@@ -206,7 +203,6 @@
                 </div>
             </section>
 
-            <!-- Dedicated Contact Section -->
             <section id="contact-section" class="lg:col-span-3 card">
                 <h2 class="section-heading">Get in Touch</h2>
                 <p class="text-gray-700 text-lg mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
@@ -231,11 +227,43 @@
             </section>
         </main>
 
-        <!-- Footer Section -->
         <footer class="text-center py-8 mt-12 bg-gray-800 text-gray-200 rounded-xl shadow-xl">
             <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
             <p>Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links'); // Get the desktop nav links
+            const navItems = mobileMenu.querySelectorAll('a'); // Get all links in the mobile menu
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Handle menu display on window resize (for smooth transitions between desktop/mobile views)
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) { // Corresponds to Tailwind's 'md' breakpoint
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex'); // Ensure desktop menu is flex
+                    mobileMenu.classList.add('hidden'); // Hide mobile menu
+                } else {
+                    navLinks.classList.remove('flex');
+                    navLinks.classList.add('hidden'); // Hide desktop menu on smaller screens
+                }
+            });
+        });
+    </script>
 </body>
 </html>
