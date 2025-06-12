@@ -13,11 +13,11 @@
         }
         /* Custom styles for section headings to match the new theme */
         .section-heading {
-            @apply text-4xl font-extrabold text-indigo-800 mb-6 relative pb-4;
+            @apply text-4xl font-extrabold text-gray-800 mb-6 relative pb-4; /* Changed heading color to gray */
         }
         .section-heading::after {
             content: '';
-            @apply absolute left-0 bottom-0 w-24 h-1 bg-purple-500 rounded-full;
+            @apply absolute left-0 bottom-0 w-24 h-1 bg-gray-500 rounded-full; /* Changed heading underline color to gray */
         }
         /* Card styling with enhanced shadow and hover effects */
         .card {
@@ -25,18 +25,18 @@
         }
         /* Styles for contact links in the hero section */
         .contact-link-hero {
-            @apply flex items-center p-3 rounded-lg bg-indigo-700 text-white shadow-md hover:bg-indigo-600 transition-colors duration-200;
+            @apply flex items-center p-3 rounded-lg bg-gray-700 text-white shadow-md hover:bg-gray-600 transition-colors duration-200; /* Changed button color to gray */
         }
         /* Styles for contact links in the dedicated contact section */
         .contact-link-section {
             @apply flex items-center p-3 rounded-lg bg-white text-gray-800 shadow-md hover:bg-gray-100 transition-colors duration-200 border border-gray-200;
         }
         .contact-link-section svg {
-            @apply text-purple-600 mr-4 flex-shrink-0;
+            @apply text-gray-600 mr-4 flex-shrink-0; /* Changed contact icon color to gray */
         }
         /* Skill badge styling with new theme colors */
         .skill-badge {
-            @apply bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-purple-200 hover:scale-105;
+            @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:scale-105; /* Changed skill badge color to gray */
         }
         /* Border line styling for resume sections */
         .border-line {
@@ -44,17 +44,17 @@
         }
     </style>
 </head>
-<!-- Body background with a new pastel gradient theme -->
-<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-gray-800 antialiased leading-normal">
+<!-- Body background with a new pastel gray gradient theme -->
+<body class="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-800 antialiased leading-normal">
     <!-- Navbar -->
-    <nav class="bg-indigo-800 p-4 shadow-xl sticky top-0 z-50">
+    <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
             <div class="space-x-6 hidden md:flex">
-                <a href="#about" class="text-indigo-200 hover:text-white transition-colors duration-200 text-lg">About</a>
-                <a href="#resume" class="text-indigo-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
-                <a href="#certifications" class="text-indigo-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
-                <a href="#contact-section" class="text-indigo-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
+                <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">About</a>
+                <a href="#resume" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
+                <a href="#certifications" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
+                <a href="#contact-section" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
             </div>
             <!-- Mobile menu button (can be implemented with JS for toggle) -->
             <button class="md:hidden text-white focus:outline-none">
@@ -66,14 +66,14 @@
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
         <!-- Hero/Header Section - Full width, more dynamic layout -->
-        <header class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-            <!-- Profile Picture - Rectangular shape, no border, with shadow -->
-            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-48 h-64 object-cover shadow-lg">
+        <header class="bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+            <!-- Profile Picture - Rectangular shape, no border, with shadow, increased size -->
+            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-72 h-72 object-cover shadow-lg">
 
             <!-- Name, Tagline, and Contact Info -->
             <div class="text-center md:text-left">
                 <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">Bais Sabu</h1>
-                <p class="text-xl lg:text-2xl font-light text-indigo-200 mb-8">Highly motivated career changer with a strong interest in cybersecurity.</p>
+                <p class="text-xl lg:text-2xl font-light text-gray-200 mb-8">Highly motivated career changer with a strong interest in cybersecurity.</p>
 
                 <!-- Contact Details in Hero Section -->
                 <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-4 text-lg">
@@ -119,7 +119,7 @@
                     <li><strong>Learning:</strong> Advanced Cyber Defense</li>
                 </ul>
                 <div class="mt-8">
-                    <a href="#resume" class="block w-full text-center bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 shadow-md">View Full Resume</a>
+                    <a href="#resume" class="block w-full text-center bg-gray-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors duration-200 shadow-md">View Full Resume</a>
                 </div>
             </section>
 
@@ -130,7 +130,7 @@
                     <!-- Education -->
                     <div>
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Education</h3>
-                        <div class="border-line border-purple-500">
+                        <div class="border-line border-gray-400"> <!-- Changed border color to gray -->
                             <h4 class="text-xl font-medium text-gray-800">B. Tech - Civil Engineering</h4>
                             <p class="text-gray-600">Viswajyothi College of Engineering & Technology, Vazhakulam</p>
                             <p class="text-gray-600 text-sm">2017-2021</p>
@@ -140,7 +140,7 @@
                     <!-- Experience -->
                     <div>
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Experience</h3>
-                        <div class="border-line border-fuchsia-500">
+                        <div class="border-line border-gray-500"> <!-- Changed border color to gray -->
                             <h4 class="text-xl font-medium text-gray-800">Site Supervisor - Omega Advertising and Sales Promotion</h4>
                             <p class="text-gray-600">2023-2024</p>
                             <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -155,7 +155,7 @@
                     <div class="md:col-span-2">
                         <h3 class="text-2xl font-semibold text-gray-700 mb-4">Projects</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="border-line border-pink-500">
+                            <div class="border-line border-gray-600"> <!-- Changed border color to gray -->
                                 <h4 class="text-xl font-medium text-gray-800">Refabricated Pavement Blocks Using Recycled Plastic - A Review</h4>
                                 <p class="text-gray-600 text-sm">2021</p>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -163,7 +163,7 @@
                                     <li>Outlined the environmental impact and economic advantages of utilizing recycled plastic in pavement blocks, supporting industry adoption through compelling data analysis.</li>
                                 </ul>
                             </div>
-                            <div class="border-line border-pink-500">
+                            <div class="border-line border-gray-600"> <!-- Changed border color to gray -->
                                 <h4 class="text-xl font-medium text-gray-800">Sloping Gate</h4>
                                 <p class="text-gray-600 text-sm">2019</p>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
@@ -198,7 +198,7 @@
             <section id="certifications" class="lg:col-span-3 card">
                 <h2 class="section-heading">Certifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5"> <!-- Changed background color to gray -->
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">CSA Certification</h3>
                         <p class="text-gray-600">Issued by EC Council</p>
                         <p class="text-gray-600 text-sm mt-1">2025</p>
@@ -232,7 +232,7 @@
         </main>
 
         <!-- Footer Section -->
-        <footer class="text-center py-8 mt-12 bg-indigo-800 text-indigo-200 rounded-xl shadow-xl">
+        <footer class="text-center py-8 mt-12 bg-gray-800 text-gray-200 rounded-xl shadow-xl">
             <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
             <p>Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
         </footer>
