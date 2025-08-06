@@ -1,219 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bais Sabu's Portfolio</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom styles for section headings to match the new theme */
-        .section-heading {
-            @apply text-4xl font-extrabold text-gray-800 mb-6 relative pb-4;
-        }
-        .section-heading::after {
-            content: '';
-            @apply absolute left-0 bottom-0 w-24 h-1 bg-gray-500 rounded-full;
-        }
-        /* Card styling with enhanced shadow and hover effects */
-        .card {
-            @apply bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1;
-        }
-        /* Styles for contact links in the hero section */
-        .contact-link-hero {
-            @apply flex items-center p-3 rounded-lg bg-gray-700 text-white shadow-md hover:bg-gray-600 transition-colors duration-200;
-        }
-        /* Styles for contact links in the dedicated contact section */
-        .contact-link-section {
-            @apply flex items-center p-3 rounded-lg bg-white text-gray-800 shadow-md hover:bg-gray-100 transition-colors duration-200 border border-gray-200;
-        }
-        .contact-link-section svg {
-            @apply text-gray-600 mr-4 flex-shrink-0;
-        }
-        /* Skill badge styling with new theme colors */
-        .skill-badge {
-            @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:scale-105;
-        }
-        /* Border line styling for resume sections */
-        .border-line {
-            @apply border-l-4 pl-6 py-3 rounded-r-lg;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bais Sabu's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for section headings to match the new theme */
+        .section-heading {
+            @apply text-4xl font-extrabold text-gray-800 mb-6 relative pb-4;
+        }
+        .section-heading::after {
+            content: '';
+            @apply absolute left-0 bottom-0 w-24 h-1 bg-gray-500 rounded-full;
+        }
+        /* Card styling with enhanced shadow and hover effects */
+        .card {
+            @apply bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1;
+        }
+        /* Styles for contact links in the hero section */
+        .contact-link-hero {
+            @apply flex items-center p-3 rounded-lg bg-gray-700 text-white shadow-md hover:bg-gray-600 transition-colors duration-200;
+        }
+        /* Styles for contact links in the dedicated contact section */
+        .contact-link-section {
+            @apply flex items-center p-3 rounded-lg bg-white text-gray-800 shadow-md hover:bg-gray-100 transition-colors duration-200 border border-gray-200;
+        }
+        .contact-link-section svg {
+            @apply text-gray-600 mr-4 flex-shrink-0;
+        }
+        /* Skill badge styling with new theme colors */
+        .skill-badge {
+            @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-200 hover:scale-105;
+        }
+        /* Border line styling for resume sections */
+        .border-line {
+            @apply border-l-4 pl-6 py-3 rounded-r-lg;
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-800 antialiased leading-normal">
-        <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">About</a>
-                <a href="#resume" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
-                <a href="#certifications" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
-                <a href="#contact-section" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
-            </div>
-                        <button class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-    </nav>
+    <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">About</a>
+                <a href="#resume" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
+                <a href="#certifications" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
+                <a href="#contact-section" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
-                <header class="bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                        <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-72 h-72 object-cover shadow-lg">
+        <header class="bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-72 h-72 object-cover shadow-lg">
 
-                        <div class="text-center md:text-left">
-                <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">Bais Sabu</h1>
-                <p class="text-xl lg:text-2xl font-light text-gray-200 mb-8">Committed to growing in the field of cybersecurity.</p>
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">Bais Sabu</h1>
+                <p class="text-xl lg:text-2xl font-light text-gray-200 mb-8">Committed to growing in the field of cybersecurity.</p>
 
-                                <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-4 text-lg">
-                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link-hero">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
-                        Email
-                    </a>
-                    <a href="tel:+919539156893" class="contact-link-hero">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                        Call
-                    </a>
-                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link-hero">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link-hero">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                        GitHub
-                    </a>
-                </div>
-            </div>
-        </header>
+                <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-4 text-lg">
+                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link-hero">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
+                        Email
+                    </a>
+                    <a href="tel:+919539156893" class="contact-link-hero">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        Call
+                    </a>
+                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link-hero">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link-hero">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </header>
 
-        <main class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                        <section id="about" class="lg:col-span-2 card">
-              <h2 class="section-heading" style="font-size: 2.5rem;">About Me</h2>
-                <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                   Hello! I'm Bais Sabu, a cybersecurity enthusiast with a strong passion for safeguarding digital systems and data. I specialize in identifying vulnerabilities, analyzing threats, and implementing security measures to protect against cyber attacks. With a solid foundation in cybersecurity principles and hands-on knowledge gained through the EC-Council's Cybersecurity Analyst (CSA) certification, I enjoy solving complex security challenges and building resilient, secure infrastructures. I’m driven to create clean, efficient, and scalable security solutions in today’s evolving threat landscape.
-                </p>
-                <p class="text-gray-700 leading-relaxed text-lg">
-                    My journey in tech began with a curiosity about how digital systems work and how they can be protected, which quickly evolved into a dedicated pursuit of cybersecurity. I'm always eager to learn new tools, techniques, and stay updated on the latest threats and defenses. With a growing interest in ethical hacking and cyber defense, I strive to contribute to secure and innovative digital environments. When I'm not studying security concepts or analyzing vulnerabilities, you can find me exploring new hiking trails or diving into a good book.
-                </p>
-            </section>
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <section id="about" class="lg:col-span-2 card">
+                <h2 class="section-heading" style="font-size: 2.5rem;">About Me</h2>
+                <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                    Hello! I'm Bais Sabu, a cybersecurity enthusiast with a strong passion for safeguarding digital systems and data. I specialize in identifying vulnerabilities, analyzing threats, and implementing security measures to protect against cyber attacks. With a solid foundation in cybersecurity principles and hands-on knowledge gained through the EC-Council's Cybersecurity Analyst (CSA) certification, I enjoy solving complex security challenges and building resilient, secure infrastructures. I’m driven to create clean, efficient, and scalable security solutions in today’s evolving threat landscape.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    My journey in tech began with a curiosity about how digital systems work and how they can be protected, which quickly evolved into a dedicated pursuit of cybersecurity. I'm always eager to learn new tools, techniques, and stay updated on the latest threats and defenses. With a growing interest in ethical hacking and cyber defense, I strive to contribute to secure and innovative digital environments. When I'm not studying security concepts or analyzing vulnerabilities, you can find me exploring new hiking trails or diving into a good book.
+                </p>
+            </section>
 
-                        <section class="card flex flex-col justify-between hidden lg:block">
-                <h2 class="section-heading text-3xl">Quick Info</h2>
-                <ul class="space-y-4 text-gray-700 text-lg">
-                    <li><strong>Location:</strong> Kerala, India</li>
-                    <li><strong>Seeking:</strong> Entry-level cybersecurity role</li>
-                    <li><strong>Key Interest:</strong> Cloud security, Incident Response</li>
-                    <li><strong>Learning:</strong> Advanced Cyber Defense</li>
-                </ul>
-                <div class="mt-8">
-                    <a href="#resume" class="block w-full text-center bg-gray-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors duration-200 shadow-md">View Full Resume</a>
-            </div>
-            </section>
+            <section class="card flex flex-col justify-between hidden lg:block">
+                <h2 class="section-heading text-3xl">Quick Info</h2>
+                <ul class="space-y-4 text-gray-700 text-lg">
+                    <li><strong>Location:</strong> Kerala, India</li>
+                    <li><strong>Seeking:</strong> Entry-level cybersecurity role</li>
+                    <li><strong>Key Interest:</strong> Cloud security, Incident Response</li>
+                    <li><strong>Learning:</strong> Advanced Cyber Defense</li>
+                </ul>
+                <div class="mt-8">
+                    <a href="#resume" class="block w-full text-center bg-gray-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700 transition-colors duration-200 shadow-md">View Full Resume</a>
+                </div>
+            </section>
 
-                        <section id="resume" class="lg:col-span-3 card">
-                <h2 class="section-heading">Resume</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Education</h3>
-                        <div class="border-line border-gray-400">
-                            <h4 class="text-xl font-medium text-gray-800">B. Tech - Civil Engineering</h4>
-                            <p class="text-gray-600">Viswajyothi College of Engineering & Technology, Vazhakulam</p>
-                            <p class="text-gray-600 text-sm">2017-2021</p>
-                        </div>
-                    </div>
+            <section id="resume" class="lg:col-span-3 card">
+                <h2 class="section-heading">Resume</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Education</h3>
+                        <div class="border-line border-gray-400">
+                            <h4 class="text-xl font-medium text-gray-800">B. Tech - Civil Engineering</h4>
+                            <p class="text-gray-600">Viswajyothi College of Engineering & Technology, Vazhakulam</p>
+                            <p class="text-gray-600 text-sm">2017-2021</p>
+                        </div>
+                    </div>
 
-                                        <div>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Experience</h3>
-                        <div class="border-line border-gray-500">
-                            <h4 class="text-xl font-medium text-gray-800">Site Supervisor - Omega Advertising and Sales Promotion</h4>
-                            <p class="text-gray-600">2023-2024</p>
-                            <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
-                                <li>Demonstrated dedication and professionalism in overseeing site operations.</li>
-                                <li>Collaborated effectively with team members to achieve project goals and deadlines.</li>
-                                <li>Orchestrated on-site logistics and coordinated teams to ensure seamless execution of advertising campaigns, resulting in enhanced project delivery and client satisfaction.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Experience</h3>
+                        <div class="border-line border-gray-500">
+                            <h4 class="text-xl font-medium text-gray-800">Site Supervisor - Omega Advertising and Sales Promotion</h4>
+                            <p class="text-gray-600">2023-2024</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                                <li>Demonstrated dedication and professionalism in overseeing site operations.</li>
+                                <li>Collaborated effectively with team members to achieve project goals and deadlines.</li>
+                                <li>Orchestrated on-site logistics and coordinated teams to ensure seamless execution of advertising campaigns, resulting in enhanced project delivery and client satisfaction.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                                        <div class="md:col-span-2">
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Projects</h3>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div class="border-line border-gray-600">
-                                <h4 class="text-xl font-medium text-gray-800">Cybersecurity Virtual Lab Environment</h4>
-                                <p class="text-gray-600 text-sm">2024</p>
-                                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
-                                    <li>Built and configured a virtual penetration testing lab using **VirtualBox**, a vulnerable target (**Metasploitable 2**), and a security-focused OS (**Kali Linux**).</li>
-                                    <li>Demonstrated foundational reconnaissance techniques by performing network scans with **Nmap** to identify open ports and services, mapping out the target's attack surface.</li>
-                                    <li>Executed a simulated attack using the **Metasploit Framework** to successfully exploit a known vulnerability in an outdated service, gaining unauthorized access to the target system.</li>
-                                    <li>Documented the entire attack lifecycle, from initial information gathering to post-exploitation analysis, providing a full report on the steps taken and the mitigations needed to secure the system.</li>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-800">Cybersecurity Virtual Lab Environment</h4>
+                                <p class="text-gray-600 text-sm">2024</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                                    <li>Built and configured a virtual penetration testing lab using **VirtualBox**, a vulnerable target (**Metasploitable 2**), and a security-focused OS (**Kali Linux**).</li>
+                                    <li>Demonstrated foundational reconnaissance techniques by performing network scans with **Nmap** to identify open ports and services, mapping out the target's attack surface.</li>
+                                    <li>Executed a simulated attack using the **Metasploit Framework** to successfully exploit a known vulnerability in an outdated service, gaining unauthorized access to the target system.</li>
+                                    <li>Documented the entire attack lifecycle, from initial information gathering to post-exploitation analysis, providing a full report on the steps taken and the mitigations needed to secure the system.</li>
+                                </ul>
+                            </div>
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-800">Refabricated Pavement Blocks Using Recycled Plastic - A Review</h4>
+                                <p class="text-gray-600 text-sm">2021</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                                    <li>Authored a comprehensive review on the use of recycled plastic in refabricating pavement blocks, highlighting the environmental benefits and potential cost savings in construction.</li>
+                                    <li>Outlined the environmental impact and economic advantages of utilizing recycled plastic in pavement blocks, supporting industry adoption through compelling data analysis.</li>
+                                </ul>
+                            </div>
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-800">Sloping Gate</h4>
+                                <p class="text-gray-600 text-sm">2019</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                                    <li>Designed solutions for challenges with outward gate openings on sloping ground.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                                        <div class="md:col-span-2">
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Skills</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge">Network Security</span>
-                            <span class="skill-badge">Security Auditing</span>
-                            <span class="skill-badge">Vulnerability Scanning</span>
-                            <span class="skill-badge">Incident Response</span>
-                            <span class="skill-badge">Wireshark</span>
-                            <span class="skill-badge">Nmap</span>
-                            <span class="skill-badge">Metasploit Framework</span>
-                            <span class="skill-badge">AWS Security (Beginner)</span>
-                            <span class="skill-badge">Windows</span>
-                            <span class="skill-badge">Linux</span>
-                            <span class="skill-badge">Python (Beginner)</span>
-                            <span class="skill-badge">Networking fundamentals</span>
-                            <span class="skill-badge">MS Office</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Network Security</span>
+                            <span class="skill-badge">Security Auditing</span>
+                            <span class="skill-badge">Vulnerability Scanning</span>
+                            <span class="skill-badge">Incident Response</span>
+                            <span class="skill-badge">AWS Security (Beginner)</span>
+                            <span class="skill-badge">Wireshark</span>
+                            <span class="skill-badge">Nmap</span>
+                            <span class="skill-badge">Metasploit Framework</span>
+                            <span class="skill-badge">Python (Beginner)</span>
+                            <span class="skill-badge">Windows</span>
+                            <span class="skill-badge">Linux</span>
+                            <span class="skill-badge">Networking fundamentals</span>
+                            <span class="skill-badge">MS Office</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                        <section id="certifications" class="lg:col-span-3 card">
-                <h2 class="section-heading">Certifications</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">CSA Certification</h3>
-                        <p class="text-gray-600">Issued by EC Council</p>
-                        <p class="text-gray-600 text-sm mt-1">2025</p>
-                    </div>
-                </div>
-            </section>
+            <section id="certifications" class="lg:col-span-3 card">
+                <h2 class="section-heading">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-0.5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">CSA Certification</h3>
+                        <p class="text-gray-600">Issued by EC Council</p>
+                        <p class="text-gray-600 text-sm mt-1">2025</p>
+                    </div>
+                </div>
+            </section>
 
-                        <section id="contact-section" class="lg:col-span-3 card">
-                <h2 class="section-heading">Get in Touch</h2>
-                <p class="text-gray-700 text-lg mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
-                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link-section">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
-                        baissabuofficial@gmail.com
-                    </a>
-                    <a href="tel:+919539156893" class="contact-link-section">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                        +91-9539156893
-                    </a>
-                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link-section">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
-                        LinkedIn Profile
-                    </a>
-                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link-section">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                        GitHub Profile
-                    </a>
-                </div>
-            </section>
-        </main>
+            <section id="contact-section" class="lg:col-span-3 card">
+                <h2 class="section-heading">Get in Touch</h2>
+                <p class="text-gray-700 text-lg mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link-section">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
+                        baissabuofficial@gmail.com
+                    </a>
+                    <a href="tel:+919539156893" class="contact-link-section">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        +91-9539156893
+                    </a>
+                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link-section">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link-section">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        GitHub Profile
+                    </a>
+                </div>
+            </section>
+        </main>
 
-                <footer class="text-center py-8 mt-12 bg-gray-800 text-gray-200 rounded-xl shadow-xl">
-            <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
-            <p>Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
-        </footer>
-    </div>
+        <footer class="text-center py-8 mt-12 bg-gray-800 text-gray-200 rounded-xl shadow-xl">
+            <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
+            <p>Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
+        </footer>
+    </div>
 </body>
 </html>
