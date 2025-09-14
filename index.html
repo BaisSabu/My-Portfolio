@@ -180,7 +180,7 @@
         }
         
         .hacker-image {
-            /* filter: sepia(1) hue-rotate(70deg) saturate(4); */ /* Removed the initial green filter */
+            /* REMOVED: filter: sepia(1) hue-rotate(70deg) saturate(4); */
             transition: all 0.5s ease;
             border: 1px solid var(--primary);
             box-shadow: 0 0 20px rgba(10, 255, 157, 0.3);
@@ -193,7 +193,7 @@
         }
         
         .hacker-image:hover {
-            filter: sepia(0) hue-rotate(0deg) saturate(1); /* Kept the hover effect to remove filter on hover */
+            filter: sepia(0) hue-rotate(0deg) saturate(1);
             animation: none;
         }
         
@@ -425,9 +425,9 @@
             display: flex;
         }
 
-        /* Added padding for smooth scrolling to sections */
+        /* FIX for partially visible section headings when clicking on navigation links */
         #about, #resume, #certifications, #contact-section {
-            scroll-margin-top: 80px; /* Adjust this value based on your navbar height */
+            scroll-margin-top: 100px; /* Increased offset to provide more space */
         }
     </style>
 </head>
@@ -604,12 +604,12 @@
                         <div class="cyber-card p-6">
                             <div class="flex flex-col items-center">
                                 <div class="badge-container mb-4">
-                                    <img src="https://i.imgur.com/kP8Yt4m.png" alt="EC-Council CSA Certification Badge" class="badge w-full rounded-lg">
+                                    <img src="https://via.placeholder.com/200x200.png?text=Your+Image+Here" alt="EC-Council CSA Certification Badge" class="badge w-full rounded-lg">
                                 </div>
                                 <h3 class="text-xl font-semibold text-gray-200 mb-2 text-center">CSA Certification</h3>
                                 <p class="text-gray-400 text-center">Issued by EC-Council</p>
                                 <p class="text-gray-500 text-sm text-center mt-1">2025</p>
-                                <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=6o14bxb4&dl=0" target="_blank" class="mt-4 cyber-button text-center">View Certificate</a>
+                                <a href="https://www.dropbox.com/scl/fi/d6iusccwzgel1pydsw0wk/ECC-CSA-07FE19KHD2E3-1.png?rlkey=t455v3grh6l725mbk13odojjc&st=gcwa34p3&dl=0" target="_blank" class="mt-4 cyber-button text-center">View Certificate</a>
                             </div>
                         </div>
                     </div>
