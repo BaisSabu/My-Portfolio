@@ -1,221 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Bais Sabu | Cybersecurity Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary: #0aff9d;
-            --secondary: #0066ff;
-            --dark: #0a1828;
-            --darker: #051016;
-        }
-
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background-color: var(--darker);
-            color: #e0e0e0;
-            overflow-x: hidden;
-            margin: 0;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .cyber-card {
-            background: rgba(10, 24, 40, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 0 20px rgba(10, 255, 157, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .cyber-card:hover {
-            transform: translateY(-5px);
-            border: 1px solid var(--primary);
-        }
-
-        .cyber-button {
-            background: linear-gradient(45deg, var(--dark), var(--secondary));
-            border: 1px solid var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-family: 'Orbitron', sans-serif;
-            cursor: pointer;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .cyber-button:hover {
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            box-shadow: 0 0 20px rgba(10, 255, 157, 0.5);
-        }
-
-        .skill-badge {
-            background: rgba(10, 255, 157, 0.1);
-            color: #e0e0e0;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border: 1px solid rgba(10, 255, 157, 0.3);
-            transition: transform 0.2s ease;
-        }
-
-        .skill-badge:hover {
-            background: rgba(10, 255, 157, 0.2);
-            transform: scale(1.05);
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            background: rgba(10, 24, 40, 0.7);
-            border-radius: 0.5rem;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #0a1828;
-        }
-
-        #tsparticles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 
-<body>
-    <div id="tsparticles"></div>
+<body class="bg-dark text-gray-300 font-mono relative">
+
+    <div id="particles-js" class="absolute inset-0 -z-10"></div>
 
     <!-- Navigation -->
-    <nav class="bg-gray-900 p-4 shadow-xl sticky top-0 z-50 flex justify-between items-center">
-        <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
-        <div class="hidden md:flex space-x-6 text-lg">
-            <a href="#about" class="hover:text-white">About</a>
-            <a href="#resume" class="hover:text-white">Resume</a>
-            <a href="#certifications" class="hover:text-white">Certifications</a>
-            <a href="#contact-section" class="hover:text-white">Contact</a>
+    <nav class="bg-gray-800 p-4 shadow-lg fixed top-0 w-full z-50 flex justify-between items-center">
+        <a href="#" class="text-primary text-2xl font-bold">Bais Sabu</a>
+        <div id="desktop-menu" class="hidden md:flex space-x-8 text-lg">
+            <a href="#about" class="hover:text-primary">About</a>
+            <a href="#resume" class="hover:text-primary">Resume</a>
+            <a href="#certifications" class="hover:text-primary">Certifications</a>
+            <a href="#skills" class="hover:text-primary">Skills</a>
+            <a href="#contact" class="hover:text-primary">Contact</a>
         </div>
         <button id="mobile-menu-button" class="md:hidden text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            ☰
         </button>
     </nav>
 
-    <div id="mobile-menu" class="hidden bg-gray-800 p-4 space-y-2">
-        <a href="#about" class="block text-gray-200">About</a>
-        <a href="#resume" class="block text-gray-200">Resume</a>
-        <a href="#certifications" class="block text-gray-200">Certifications</a>
-        <a href="#contact-section" class="block text-gray-200">Contact</a>
+    <div id="mobile-menu" class="hidden bg-gray-900 text-lg p-4 fixed w-full top-16 z-50 space-y-4">
+        <a href="#about" class="block hover:text-primary">About</a>
+        <a href="#resume" class="block hover:text-primary">Resume</a>
+        <a href="#certifications" class="block hover:text-primary">Certifications</a>
+        <a href="#skills" class="block hover:text-primary">Skills</a>
+        <a href="#contact" class="block hover:text-primary">Contact</a>
     </div>
 
     <!-- Hero Section -->
-    <section class="flex flex-col items-center justify-center text-center min-h-screen p-8">
-        <h1 class="text-5xl font-bold text-white">Bais Sabu</h1>
-        <p class="text-xl text-gray-300 mt-4">Cybersecurity Specialist | EC-Council CSA Certified</p>
-        <a href="#resume" class="cyber-button mt-6">View My Work</a>
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <img src="assets/profile.jpg" alt="Bais Sabu" class="rounded-full shadow-lg w-48 h-48 mb-6 hover:scale-105 transition-transform duration-500"/>
+        <h1 class="text-5xl font-bold text-primary mb-4">Bais Sabu</h1>
+        <p class="text-xl text-gray-300">Cybersecurity Professional | EC-Council CSA Certified | SOC Operations | Ethical Hacker</p>
+        <div class="mt-6 space-x-4">
+            <a href="mailto:baissabuofficial@gmail.com" class="btn-primary">Contact Me</a>
+            <a href="#resume" class="btn-secondary">View My Resume</a>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="cyber-card m-8">
-        <h2 class="text-3xl font-semibold mb-4 text-white">About Me</h2>
-        <p class="text-gray-300 mb-4">I'm passionate about cybersecurity, focusing on protecting digital systems. Constantly learning, I specialize in threat analysis, vulnerability assessment, and cyber defense. Outside of work, I enjoy hiking and reading.</p>
+    <section id="about" class="max-w-5xl mx-auto p-8">
+        <h2 class="text-3xl font-semibold text-primary mb-6">About Me</h2>
+        <p class="leading-relaxed mb-4">
+            I am a cybersecurity enthusiast with EC-Council's CSA certification and a strong foundation in SOC operations, vulnerability analysis, and threat intelligence.
+            I actively develop hands-on skills through personal projects and labs on TryHackMe and Hack The Box.
+            I am seeking an entry-level role in cybersecurity to contribute to defending systems while continuing to grow professionally.
+        </p>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="cyber-card m-8">
-        <h2 class="text-3xl font-semibold mb-4 text-white">Resume</h2>
-        <p class="text-gray-300">B.Tech in Civil Engineering, CSA Certified, experienced in site supervision, and hands-on in cybersecurity home lab projects.</p>
+    <section id="resume" class="max-w-5xl mx-auto p-8">
+        <h2 class="text-3xl font-semibold text-primary mb-6">Resume</h2>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-primary mb-4">Education</h3>
+            <p><strong>EC Council</strong> – Certified SOC Analyst (2025)</p>
+            <p><strong>Viswajyothi College of Engineering & Technology</strong> – B. Tech in Civil Engineering (2017 – 2021)</p>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-primary mb-4">Experience</h3>
+            <p><strong>Site Supervisor – Omega Advertising and Sales Promotion (2023 – 2024)</strong></p>
+            <ul class="list-disc ml-5">
+                <li>Oversaw site operations with dedication and professionalism.</li>
+                <li>Collaborated effectively to meet goals and deadlines.</li>
+                <li>Managed logistics for seamless advertising campaign delivery.</li>
+            </ul>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-primary mb-4">Projects</h3>
+            <ul class="list-disc ml-5 space-y-2">
+                <li><strong>Cybersecurity Home Lab | 2025:</strong> Virtual lab environment with Windows 10 target and Kali Linux attacker. Implemented Sysmon logging and Splunk central log analysis. Simulated full attack lifecycle and developed defensive recommendations.</li>
+                <li><strong>TryHackMe Labs:</strong> Linux Fundamentals, Pentesting Fundamentals, Nmap, OSINT, SOC Fundamentals, Web App Basics, and more. Profile: <a href="https://tryhackme.com/p/Kingslover" target="_blank">Kingslover</a></li>
+            </ul>
+        </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="cyber-card m-8">
-        <h2 class="text-3xl font-semibold mb-4 text-white">Certifications</h2>
-        <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?dl=0" target="_blank" class="cyber-button">View CSA Certificate</a>
+    <section id="certifications" class="max-w-5xl mx-auto p-8">
+        <h2 class="text-3xl font-semibold text-primary mb-6">Certifications</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                <img src="assets/certificates/CSA-Certificate.png" alt="CSA Certificate" class="rounded-md mb-4"/>
+                <h3 class="text-xl font-semibold text-primary">Certified SOC Analyst (CSA)</h3>
+                <p>Issued by EC-Council – June 2025</p>
+                <a href="assets/certificates/CSA-Certificate.pdf" target="_blank" class="btn-secondary mt-4 inline-block">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto p-8">
+        <h2 class="text-3xl font-semibold text-primary mb-6">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div>
+                <h4 class="font-semibold">Network Security</h4>
+                <div class="skill-bar"><div class="skill-progress" data-progress="90%"></div></div>
+                <p class="text-gray-400 text-sm mt-1">Expertise in firewalls, intrusion detection, and network monitoring.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">Security Auditing</h4>
+                <div class="skill-bar"><div class="skill-progress" data-progress="85%"></div></div>
+                <p class="text-gray-400 text-sm mt-1">Conducting detailed audits of IT infrastructure to detect vulnerabilities.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">Incident Response</h4>
+                <div class="skill-bar"><div class="skill-progress" data-progress="80%"></div></div>
+                <p class="text-gray-400 text-sm mt-1">Managing and mitigating security incidents effectively and efficiently.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">AWS Security (Beginner)</h4>
+                <div class="skill-bar"><div class="skill-progress" data-progress="70%"></div></div>
+                <p class="text-gray-400 text-sm mt-1">Basic understanding of cloud security principles and practices.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact-section" class="cyber-card m-8">
-        <h2 class="text-3xl font-semibold mb-4 text-white">Get in Touch</h2>
-        <a href="mailto:baissabuofficial@gmail.com" class="contact-link">
-            📧 baissabuofficial@gmail.com
-        </a>
-        <a href="tel:+919539156893" class="contact-link">
-            📞 +91-9539156893
-        </a>
-        <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link">
-            🔗 LinkedIn
-        </a>
-        <a href="https://github.com/BaisSabu" target="_blank" class="contact-link">
-            🐙 GitHub
-        </a>
+    <section id="contact" class="max-w-5xl mx-auto p-8 text-center">
+        <h2 class="text-3xl font-semibold text-primary mb-6">Contact Me</h2>
+        <p class="mb-6">I’m open to new opportunities and collaborations. Feel free to reach out via the links below.</p>
+        <div class="space-y-4 md:space-y-0 md:flex md:justify-center gap-6">
+            <a href="mailto:baissabuofficial@gmail.com" class="btn-primary">📧 Email Me</a>
+            <a href="tel:+919539156893" class="btn-secondary">📞 Call Me</a>
+            <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="btn-primary">🔗 LinkedIn</a>
+            <a href="https://github.com/BaisSabu" target="_blank" class="btn-secondary">🐙 GitHub</a>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Bais Sabu | Built with Passion for Cybersecurity</p>
+    <footer class="text-center p-6 text-gray-500 mt-12">
+        &copy; 2025 Bais Sabu | Built with ♥ and Passion for Cybersecurity
     </footer>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        tsParticles.load("tsparticles", {
-            particles: {
-                number: { value: 60 },
-                color: { value: "#0aff9d" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                move: { enable: true, speed: 2, out_mode: "bounce" },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#0aff9d",
-                    opacity: 0.4,
-                    width: 1
-                }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" }
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 1 } },
-                    push: { particles_nb: 4 }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
