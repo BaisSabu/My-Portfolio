@@ -180,7 +180,7 @@
         }
         
         .hacker-image {
-            filter: sepia(1) hue-rotate(70deg) saturate(4);
+            /* filter: sepia(1) hue-rotate(70deg) saturate(4); */ /* Removed the initial green filter */
             transition: all 0.5s ease;
             border: 1px solid var(--primary);
             box-shadow: 0 0 20px rgba(10, 255, 157, 0.3);
@@ -193,7 +193,7 @@
         }
         
         .hacker-image:hover {
-            filter: sepia(0) hue-rotate(0deg) saturate(1);
+            filter: sepia(0) hue-rotate(0deg) saturate(1); /* Kept the hover effect to remove filter on hover */
             animation: none;
         }
         
@@ -604,12 +604,12 @@
                         <div class="cyber-card p-6">
                             <div class="flex flex-col items-center">
                                 <div class="badge-container mb-4">
-                                    <img src="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.png?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=o4k0py4p&dl=1" alt="EC-Council CSA Certification" class="badge w-full rounded-lg">
+                                    <img src="https://i.imgur.com/kP8Yt4m.png" alt="EC-Council CSA Certification Badge" class="badge w-full rounded-lg">
                                 </div>
                                 <h3 class="text-xl font-semibold text-gray-200 mb-2 text-center">CSA Certification</h3>
                                 <p class="text-gray-400 text-center">Issued by EC-Council</p>
                                 <p class="text-gray-500 text-sm text-center mt-1">2025</p>
-                                <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=o4k0py4p&dl=0" target="_blank" class="mt-4 cyber-button text-center">View Certificate</a>
+                                <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=6o14bxb4&dl=0" target="_blank" class="mt-4 cyber-button text-center">View Certificate</a>
                             </div>
                         </div>
                     </div>
@@ -688,7 +688,6 @@
             }
         }
         
-        // Simple animation for skill bars
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             
@@ -708,6 +707,32 @@
             
             skillBars.forEach(bar => {
                 observer.observe(bar);
+            });
+
+            const navHeight = document.querySelector('nav').offsetHeight;
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - navHeight - 20;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                        }
+                    }
+                });
             });
         });
     </script>
