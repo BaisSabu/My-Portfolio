@@ -1,125 +1,515 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Bais Sabu | Cybersecurity Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bais Sabu | Cybersecurity Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0aff9d;
+            --secondary: #0066ff;
+            --dark: #0a1828;
+            --darker: #051016;
+        }
+        
         body {
-            font-family: 'Fira Code', monospace;
-            background-color: #0a0a0a;
-            color: #00ff00;
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--darker);
+            color: #e0e0e0;
+            overflow-x: hidden;
         }
-        #particles-js {
-            position: fixed;
-            width: 100%;
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .cyber-bg {
+            background: linear-gradient(rgba(5, 16, 22, 0.85), rgba(5, 16, 22, 0.95)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23051016" width="100" height="100"/><path fill="%230a1828" d="M0 0h100v100H0z"/><path fill="%23006cff22" d="M0 0h50v50H0z"/><path fill="%2300ffaa11" d="M50 50h50v50H50z"/></svg>');
+            background-size: cover;
+            position: relative;
+        }
+        
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(10, 255, 157, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 255, 157, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .cyber-card {
+            background: rgba(10, 24, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(10, 255, 157, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(10, 255, 157, 0.1);
+        }
+        
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(10, 255, 157, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, var(--dark), var(--secondary));
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cyber-button:hover {
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            box-shadow: 0 0 15px rgba(10, 255, 157, 0.5);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(10, 255, 157, 0.7);
+        }
+        
+        .nav-glow {
+            box-shadow: 0 0 10px rgba(10, 255, 157, 0.5);
+        }
+        
+        .terminal {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Roboto Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            animation: scanline 3s linear infinite;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid var(--primary);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .hacker-image {
+            filter: sepia(1) hue-rotate(70deg) saturate(4);
+            transition: all 0.5s ease;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 20px rgba(10, 255, 157, 0.3);
+        }
+        
+        .hacker-image:hover {
+            filter: sepia(0) hue-rotate(0deg) saturate(1);
+            box-shadow: 0 0 30px rgba(10, 255, 157, 0.6);
+        }
+        
+        .badge-container {
+            perspective: 1000px;
+        }
+        
+        .badge {
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 0 25px rgba(10, 255, 157, 0.4);
+            border: 2px solid var(--primary);
+        }
+        
+        .badge:hover {
+            transform: rotateY(20deg) rotateX(10deg) translateZ(20px);
+        }
+        
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-progress {
             height: 100%;
-            z-index: -1;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            border-radius: 4px;
+            position: relative;
+            transition: width 1.5s ease-in-out;
         }
-        a {
-            color: #00ff00;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+            animation: move 2s linear infinite;
         }
-        a:hover {
-            color: #00cc00;
+        
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
         }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -10px); }
+            100% { transform: translate(0, 0px); }
+        }
+        
         .section-heading {
             font-size: 2.5rem;
-            font-weight: bold;
-            border-bottom: 2px solid #00ff00;
-            padding-bottom: 0.5rem;
+            font-weight: 800;
+            color: #e0e0e0;
             margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
         }
-        .card {
-            background: rgba(0,0,0,0.8);
-            border: 1px solid #00ff00;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 0 10px #00ff00;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 9999px;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px #00ff00;
+        
+        .border-line {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-radius: 0 0.5rem 0.5rem 0;
         }
+        
+        .skill-badge {
+            background: rgba(10, 255, 157, 0.1);
+            color: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(10, 255, 157, 0.3);
+        }
+        
+        .skill-badge:hover {
+            background: rgba(10, 255, 157, 0.2);
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+        
         .contact-link {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            border: 1px solid #00ff00;
             padding: 0.75rem;
             border-radius: 0.5rem;
-            transition: background 0.3s ease;
+            background: rgba(10, 24, 40, 0.7);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(10, 255, 157, 0.2);
         }
+        
         .contact-link:hover {
-            background: #002200;
+            background: rgba(10, 255, 157, 0.1);
+            box-shadow: 0 0 15px rgba(10, 255, 157, 0.3);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .contact-link svg {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-link {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .contact-link svg {
+                margin-right: 0.75rem;
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
-<body>
+<body class="cyber-bg cyber-grid min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50 nav-glow">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">Bais Sabu</a>
+            <div id="desktop-menu" class="space-x-6 hidden md:flex">
+                <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">About</a>
+                <a href="#resume" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Resume</a>
+                <a href="#certifications" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Certifications</a>
+                <a href="#contact-section" class="text-gray-200 hover:text-white transition-colors duration-200 text-lg">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+             <a href="#about" class="block text-gray-200 hover:text-white py-2">About</a>
+             <a href="#resume" class="block text-gray-200 hover:text-white py-2">Resume</a>
+             <a href="#certifications" class="block text-gray-200 hover:text-white py-2">Certifications</a>
+             <a href="#contact-section" class="block text-gray-200 hover:text-white py-2">Contact</a>
+        </div>
+    </nav>
 
-<div id="particles-js"></div>
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
-<nav class="p-4 flex justify-between items-center bg-gray-900">
-    <h1 class="text-2xl font-bold">Bais Sabu</h1>
-    <div class="space-x-6">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact-section">Contact</a>
+        <header class="bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-xl shadow-2xl p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-xl w-72 h-72 object-cover shadow-lg hacker-image">
+
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">Bais Sabu</h1>
+                <p class="text-xl lg:text-2xl font-light text-gray-200 mb-8">Cybersecurity Specialist | EC-Council CSA Certified</p>
+                <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-4 text-lg">
+                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="tel:+919539156893" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        <span>Call</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <section id="about" class="lg:col-span-2 cyber-card p-8">
+                <h2 class="section-heading">About Me</h2>
+                <p class="text-gray-300 leading-relaxed text-lg mb-4">
+                    Hi, I'm Bais Sabu, a cybersecurity enthusiast with a strong passion for protecting digital systems and data. I hold the EC-Council's CSA certification and specialize in threat analysis, vulnerability assessment, and implementing robust security measures. I enjoy solving complex security challenges and building resilient, scalable solutions in today's evolving cyber landscape.
+                </p>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    My tech journey began with a curiosity about how digital systems work and how to protect them, which soon grew into a passion for cybersecurity. I'm constantly learning new tools and staying updated on the latest threats and defenses, with a strong interest in ethical hacking and cyber defense. Outside of cybersecurity, I enjoy hiking and getting lost in a good book.
+                </p>
+            </section>
+
+            <section class="cyber-card p-8 flex flex-col justify-between hidden lg:block">
+                <h2 class="section-heading text-3xl">Quick Info</h2>
+                <ul class="space-y-4 text-gray-300 text-lg">
+                    <li><strong>Location:</strong> Kerala, India</li>
+                    <li><strong>Seeking:</strong> Entry-level cybersecurity role</li>
+                    <li><strong>Key Interest:</strong> Cloud security, Incident Response</li>
+                    <li><strong>Learning:</strong> Advanced Cyber Defense</li>
+                </ul>
+                <div class="mt-8">
+                    <a href="#resume" class="block w-full text-center cyber-button py-3 px-6 rounded-lg text-lg font-semibold">View Full Resume</a>
+                </div>
+            </section>
+
+            <section id="resume" class="lg:col-span-3 cyber-card p-8">
+                <h2 class="section-heading">Resume</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-300 mb-4">Education</h3>
+                        <div class="border-line border-gray-400">
+                            <h4 class="text-xl font-medium text-gray-200">B. Tech - Civil Engineering</h4>
+                            <p class="text-gray-400">Viswajyothi College of Engineering & Technology, Vazhakulam</p>
+                            <p class="text-gray-500 text-sm">2017-2021</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-300 mb-4">Experience</h3>
+                        <div class="border-line border-gray-500">
+                            <h4 class="text-xl font-medium text-gray-200">Site Supervisor - Omega Advertising and Sales Promotion</h4>
+                            <p class="text-gray-400">2023-2024</p>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                                <li>Demonstrated dedication and professionalism in overseeing site operations.</li>
+                                <li>Collaborated effectively with team members to achieve project goals and deadlines.</li>
+                                <li>Orchestrated on-site logistics and coordinated teams to ensure seamless execution of advertising campaigns, resulting in enhanced project delivery and client satisfaction.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-semibold text-gray-300 mb-4">Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-200">Cybersecurity Home Lab</h4>
+                                <p class="text-gray-400 text-sm">Personal Project 2025</p>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                                    <li>Designed and configured a virtual lab environment for hands-on security testing, including a Windows 10 target and a Kali Linux attacker VM.</li>
+                                    <li>Implemented endpoint detection and response (EDR) capabilities using Sysmon for logging and Splunk for centralized log management and analysis.</li>
+                                    <li>Simulated a realistic cyberattack, from reconnaissance to payload delivery, using tools like Nmap and Metasploit.</li>
+                                    <li>Successfully detected the simulated attack in real-time by analyzing Sysmon and Splunk logs, identifying indicators of compromise (IOCs) such as new process creation and outbound network connections.</li>
+                                    <li>Developed defensive recommendations, including Application Control, Firewall Rules, and User Awareness training, based on post-execution analysis.</li>
+                                </ul>
+                            </div>
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-200">Cybersecurity Virtual Lab Environment</h4>
+                                <p class="text-gray-400 text-sm">2025</p>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                                    <li>Built and configured a virtual penetration testing lab using VirtualBox, a vulnerable target (Metasploitable 2), and a security-focused OS (Kali Linux).</li>
+                                    <li>Demonstrated foundational reconnaissance techniques by performing network scans with Nmap to identify open ports and services, mapping out the target's attack surface.</li>
+                                    <li>Executed a simulated attack using the Metasploit Framework to successfully exploit a known vulnerability in an outdated service, gaining unauthorized access to the target system.</li>
+                                    <li>Documented the entire attack lifecycle, from initial information gathering to post-exploitation analysis, providing a full report on the steps taken and the mitigations needed to secure the system.</li>
+                                </ul>
+                            </div>
+                            <div class="border-line border-gray-600">
+                                <h4 class="text-xl font-medium text-gray-200">Refabricated Pavement Blocks Using Recycled Plastic - A Review</h4>
+                                <p class="text-gray-400 text-sm">2021</p>
+                                <ul class="list-disc list-inside text-gray-300 space-y-1 mt-2">
+                                    <li>Authored a comprehensive review on the use of recycled plastic in refabricating pavement blocks, highlighting the environmental benefits and potential cost savings in construction.</li>
+                                    <li>Outlined the environmental impact and economic advantages of utilizing recycled plastic in pavement blocks, supporting industry adoption through compelling data analysis.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-semibold text-gray-300 mb-4">Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Network Security</span>
+                            <span class="skill-badge">Security Auditing</span>
+                            <span class="skill-badge">Vulnerability Scanning</span>
+                            <span class="skill-badge">Incident Response</span>
+                            <span class="skill-badge">AWS Security (Beginner)</span>
+                            <span class="skill-badge">Wireshark</span>
+                            <span class="skill-badge">Nmap</span>
+                            <span class="skill-badge">Metasploit Framework</span>
+                            <span class="skill-badge">Python (Beginner)</span>
+                            <span class="skill-badge">Windows</span>
+                            <span class="skill-badge">Linux</span>
+                            <span class="skill-badge">Networking fundamentals</span>
+                            <span class="skill-badge">MS Office</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certifications" class="lg:col-span-3 cyber-card p-8">
+                <h2 class="section-heading">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="badge-container">
+                        <div class="cyber-card p-6">
+                            <div class="flex flex-col items-center">
+                                <div class="badge-container mb-4">
+                                    <img src="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.png?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=o4k0py4p&dl=1" 
+                                         alt="EC-Council CSA Certification" class="badge w-full rounded-lg">
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-200 mb-2 text-center">CSA Certification</h3>
+                                <p class="text-gray-400 text-center">Issued by EC-Council</p>
+                                <p class="text-gray-500 text-sm text-center mt-1">2025</p>
+                                <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=o4k0py4p&dl=0" 
+                                   target="_blank" class="mt-4 cyber-button text-center">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-section" class="lg:col-span-3 cyber-card p-8">
+                <h2 class="section-heading">Get in Touch</h2>
+                <p class="text-gray-300 text-lg mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                    <a href="mailto:baissabuofficial@gmail.com" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
+                        baissabuofficial@gmail.com
+                    </a>
+                    <a href="tel:+919539156893" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        +91-9539156893
+                    </a>
+                    <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/BaisSabu" target="_blank" class="contact-link">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.78 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        GitHub Profile
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 mt-12 bg-gray-800 text-gray-200 rounded-xl shadow-xl">
+            <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
+            <p>Built with <span class="text-[var(--primary)]">&hearts;</span> and Cyber Security Passion</p>
+        </footer>
     </div>
-</nav>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-<header class="text-center py-12">
-    <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=c5b181e1093240c9443291deae786aabddacbc3f&v=4" alt="Bais Sabu" class="rounded-full mx-auto w-48 h-48 shadow-lg"/>
-    <h2 class="section-heading">Bais Sabu</h2>
-    <p>Cybersecurity Specialist | EC-Council CSA Certified | SOC Operations | Ethical Hacker</p>
-</header>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-<section id="about" class="max-w-4xl mx-auto my-12 card">
-    <h3 class="section-heading">About Me</h3>
-    <p>I'm Bais Sabu, a cybersecurity enthusiast focused on protecting digital systems. Skilled in threat analysis, vulnerability assessment, and defensive architecture. Passionate about hands-on labs, ethical hacking, and continuous learning.</p>
-</section>
-
-<section id="resume" class="max-w-4xl mx-auto my-12 card">
-    <h3 class="section-heading">Resume</h3>
-    <strong>Education:</strong>
-    <p>B.Tech in Civil Engineering (2017 – 2021)</p>
-    <strong>Experience:</strong>
-    <ul>
-        <li>Site Supervisor – Omega Advertising (2023 – 2024): Managed site operations & logistics.</li>
-    </ul>
-    <strong>Projects:</strong>
-    <ul>
-        <li>Home Cybersecurity Lab: Virtual setup with Sysmon, Splunk, Metasploit.</li>
-        <li>TryHackMe Challenges: Linux Fundamentals, OSINT, SOC Fundamentals.</li>
-    </ul>
-</section>
-
-<section id="certifications" class="max-w-4xl mx-auto my-12 card">
-    <h3 class="section-heading">Certifications</h3>
-    <p><strong>CSA – EC-Council | 2025</strong></p>
-    <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?dl=0" target="_blank">View Certificate</a>
-</section>
-
-<section id="contact-section" class="max-w-4xl mx-auto my-12 card">
-    <h3 class="section-heading">Contact</h3>
-    <div class="space-y-4">
-        <a class="contact-link" href="mailto:baissabuofficial@gmail.com">📧 baissabuofficial@gmail.com</a>
-        <a class="contact-link" href="tel:+919539156893">📞 +91 9539156893</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank">🔗 LinkedIn</a>
-        <a class="contact-link" href="https://github.com/BaisSabu" target="_blank">🐙 GitHub</a>
-    </div>
-</section>
-
-<footer class="text-center py-6 text-gray-500">
-    &copy; 2025 Bais Sabu – Powered by Tailwind & Kali Vibes
-</footer>
-
-<script src="js/script.js"></script>
+        // Simple animation for skill bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
 </body>
 </html>
