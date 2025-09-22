@@ -8,71 +8,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00bcd4; /* A more corporate teal */
-            --secondary: #0097a7;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light-gray: #e0e0e0;
-            --medium-gray: #b0b0b0;
-            --dark-gray: #4a4a4a;
+            --primary: #00bcd4; /* A vibrant, corporate teal */
+            --secondary: #0097a7; /* A darker teal for accents */
+            --tertiary: #00e5ff; /* A lighter, glowing teal for hover effects */
+            --dark: #0a0a0a; /* Deep black */
+            --medium-dark: #121212; /* Darker gray background */
+            --light-gray: #e0e0e0; /* Light gray for main text */
+            --medium-gray: #b0b0b0; /* Medium gray for secondary text */
         }
 
         body {
             font-family: 'Roboto Mono', monospace;
-            background-color: var(--darker);
+            background-color: var(--medium-dark);
             color: var(--light-gray);
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Orbitron', sans-serif;
+            color: var(--light-gray);
         }
 
+        /* Subtle background pattern */
         .professional-bg {
-            background-color: var(--darker);
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 25%),
-                radial-gradient(circle at 85% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 25%);
+            background-color: var(--dark);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(0, 188, 212, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 85% 50%, rgba(0, 188, 212, 0.05) 0%, transparent 25%);
         }
 
         .professional-card {
-            background-color: rgba(25, 25, 25, 0.8);
+            background-color: rgba(18, 18, 18, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 188, 212, 0.2);
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
         }
 
         .professional-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 188, 212, 0.2);
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.1);
         }
 
         .professional-button {
             background-color: var(--primary);
             color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 10px 24px;
+            border-radius: 8px;
             font-family: 'Roboto Mono', monospace;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
             text-transform: uppercase;
             letter-spacing: 1px;
             border: none;
+            box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
         }
 
         .professional-button:hover {
             background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 188, 212, 0.4);
         }
 
         .section-heading {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--light-gray);
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            display: inline-block;
         }
 
         .section-heading::after {
@@ -80,10 +84,16 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
+            width: 80%;
             height: 3px;
             background-color: var(--primary);
             border-radius: 9999px;
+            transform-origin: left;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .professional-card:hover .section-heading::after {
+            width: 100%;
         }
 
         .border-line {
@@ -92,12 +102,13 @@
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
             border-radius: 0 0.5rem 0.5rem 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
         
         .border-line:hover {
-            border-color: var(--secondary);
-            box-shadow: -3px 0 10px rgba(0, 188, 212, 0.3);
+            border-color: var(--tertiary);
+            box-shadow: -3px 0 15px rgba(0, 188, 212, 0.5);
+            transform: translateX(5px);
         }
         
         .skill-badge {
@@ -107,25 +118,26 @@
             border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 500;
-            transition: all 0.2s ease;
+            transition: all 0.2s ease-in-out;
             border: 1px solid rgba(0, 188, 212, 0.3);
         }
 
         .skill-badge:hover {
             background: rgba(0, 188, 212, 0.2);
             transform: scale(1.05);
-            border-color: var(--primary);
+            border-color: var(--tertiary);
         }
 
         .contact-link {
             display: flex;
             align-items: center;
-            padding: 0.75rem;
+            padding: 0.75rem 1rem;
             border-radius: 0.5rem;
-            background: rgba(25, 25, 25, 0.8);
+            background: rgba(18, 18, 18, 0.8);
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
             border: 1px solid rgba(0, 188, 212, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .contact-link:hover {
@@ -137,11 +149,15 @@
 
         .contact-link svg {
             margin-right: 0.75rem;
+            height: 1.5rem;
+            width: 1.5rem;
         }
+
     </style>
 </head>
 <body class="professional-bg">
     
+    <!-- Navigation Bar -->
     <nav class="bg-gray-800 p-4 shadow-xl sticky top-0 z-50" style="background: rgba(18, 18, 18, 0.95) !important; backdrop-filter: blur(10px);">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-white text-2xl font-bold font-orbitron">Bais Sabu</a>
@@ -162,10 +178,13 @@
              <a href="#contact-section" class="block text-gray-200 hover:text-white py-2">Contact</a>
         </div>
     </nav>
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8 relative z-10">
 
+    <!-- Main Content Container -->
+    <div class="container mx-auto p-4 sm:p-6 lg:p-10 relative z-10">
+
+        <!-- Hero Section -->
         <header class="professional-card p-8 lg:p-16 mb-12 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-full w-48 h-48 object-cover shadow-lg border-2 border-[var(--primary)]">
+            <img src="https://avatars.githubusercontent.com/u/215961971?s=400&u=5ead5dd71ffed38071c9f39cf26d9a30fef614fb&v=4" alt="Bais Sabu's Profile" class="rounded-full w-48 h-48 object-cover shadow-lg border-2 border-[var(--primary)] transition-transform duration-500 ease-in-out hover:scale-105">
 
             <div class="text-center md:text-left">
                 <h1 class="text-5xl lg:text-6xl font-extrabold mb-2 font-orbitron">Bais Sabu</h1>
@@ -188,7 +207,8 @@
         </header>
 
         <main class="grid grid-cols-1 gap-10">
-            <section id="about" class="professional-card p-8">
+            <!-- About Section -->
+            <section id="about" class="professional-card p-8 lg:p-12">
                 <h2 class="section-heading">About Me</h2>
                 <div class="lg:flex lg:space-x-8">
                     <div class="lg:w-2/3">
@@ -208,17 +228,18 @@
                             <li><strong>Currently Learning:</strong> Advanced Cyber Defense</li>
                         </ul>
                         <div class="mt-8">
-                            <a href="#resume" class="block w-full text-center professional-button py-3 px-6 rounded-lg text-lg font-semibold">View Full Resume</a>
+                            <a href="https://www.dropbox.com/scl/fi/ao0ojs6sxssm59rlneduh/bais-sabu-2025-CSA.pdf?rlkey=f46hx4yfxm47vc9nylphue5hf&st=1qv1ddp3&dl=0" target="_blank" class="block w-full text-center professional-button py-3 px-6 rounded-lg text-lg font-semibold">View Full Resume</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="resume" class="professional-card p-8">
+            <!-- Resume Section -->
+            <section id="resume" class="professional-card p-8 lg:p-12">
                 <h2 class="section-heading">Resume</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-2xl font-semibold text-[var(--light-gray)] mb-4">Education</h3>
+                        <h3 class="text-2xl font-semibold mb-4">Education</h3>
                         <div class="border-line text-[var(--medium-gray)]">
                             <h4 class="text-xl font-medium text-[var(--light-gray)]">B. Tech - Civil Engineering</h4>
                             <p>Viswajyothi College of Engineering & Technology, Vazhakulam</p>
@@ -227,7 +248,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-2xl font-semibold text-[var(--light-gray)] mb-4">Experience</h3>
+                        <h3 class="text-2xl font-semibold mb-4">Experience</h3>
                         <div class="border-line text-[var(--medium-gray)]">
                             <h4 class="text-xl font-medium text-[var(--light-gray)]">Site Supervisor - Omega Advertising and Sales Promotion</h4>
                             <p class="text-[var(--dark-gray)] text-sm">2023-2024</p>
@@ -240,8 +261,8 @@
                     </div>
 
                     <div class="md:col-span-2">
-                        <h3 class="text-2xl font-semibold text-[var(--light-gray)] mb-4">Projects</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <h3 class="text-2xl font-semibold mb-4">Projects</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div class="border-line text-[var(--medium-gray)]">
                                 <h4 class="text-xl font-medium text-[var(--light-gray)]">Cybersecurity Home Lab</h4>
                                 <p class="text-[var(--dark-gray)] text-sm">Personal Project 2025</p>
@@ -272,7 +293,7 @@
                     </div>
 
                     <div class="md:col-span-2">
-                        <h3 class="text-2xl font-semibold text-[var(--light-gray)] mb-4">Skills</h3>
+                        <h3 class="text-2xl font-semibold mb-4">Skills</h3>
                         <div class="flex flex-wrap gap-3">
                             <span class="skill-badge">Network Security</span>
                             <span class="skill-badge">Security Auditing</span>
@@ -290,11 +311,12 @@
                 </div>
             </section>
 
-            <section id="certifications" class="professional-card p-8">
+            <!-- Certifications Section -->
+            <section id="certifications" class="professional-card p-8 lg:p-12">
                 <h2 class="section-heading">Certifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="professional-card p-6 flex flex-col items-center text-center">
-                        <h3 class="text-xl font-semibold text-[var(--light-gray)] mt-4 mb-2">CSA Certification</h3>
+                        <h3 class="text-xl font-semibold mt-4 mb-2">CSA Certification</h3>
                         <p class="text-[var(--medium-gray)]">Issued by EC-Council</p>
                         <p class="text-[var(--dark-gray)] text-sm mt-1">2025</p>
                         <a href="https://www.dropbox.com/scl/fi/3smaio135h1zg2e6rssvc/ECC-CSA-Certificate.pdf?rlkey=f3rmgy2xhqhtqbmwbjdc5n5su&st=e6z02zag&dl=0" target="_blank" class="mt-4 professional-button text-center">View Certificate</a>
@@ -302,30 +324,32 @@
                 </div>
             </section>
 
-            <section id="contact-section" class="professional-card p-8">
+            <!-- Contact Section -->
+            <section id="contact-section" class="professional-card p-8 lg:p-12">
                 <h2 class="section-heading">Get in Touch</h2>
                 <p class="text-[var(--medium-gray)] text-lg mb-6">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
                     <a href="mailto:baissabuofficial@gmail.com" class="contact-link">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"></path></svg>
-                        baissabuofficial@gmail.com
+                        <span>baissabuofficial@gmail.com</span>
                     </a>
                     <a href="tel:+919539156893" class="contact-link">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                        +91-9539156893
+                        <span>+91-9539156893</span>
                     </a>
                     <a href="https://www.linkedin.com/in/bais-sabu-76525521b" target="_blank" class="contact-link">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3.536 3.536a2 2 0 01-2.828 0L6.464 8.172a2 2 0 010-2.828 2 2 0 012.828 0l1.414 1.414 1.414-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5.996 17H4a2 2 0 01-2-2V5.996A2 2 0 014 4h4.004c.038-.057.078-.112.12-.167l-2.096-2.096A2 2 0 018.414 1h3.172a2 2 0 011.414.586l2.096 2.096c.045.055.085.11.12.167H16a2 2 0 012 2V15a2 2 0 01-2 2h-1.996a2 2 0 01-1.996-1.884l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.037 11.037 0 00-6.107-6.107l-.774 1.548a1 1 0 01-1.059.54L4.118 7.004A2 2 0 014 9z" clip-rule="evenodd"></path></svg>
-                        LinkedIn Profile
+                        <span>LinkedIn Profile</span>
                     </a>
                     <a href="https://github.com/BaisSabu" target="_blank" class="contact-link">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.780 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                        GitHub Profile
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.866 8.156 6.839 9.464.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.37-1.34-3.37-1.34-.454-1.15-.111-1.464-.083-1.554.249-.17.63-.26.96-.26.68 0 1.034.7 1.034.7.605 1.036 1.58.736 1.964.56.06-.436.237-.736.432-.904-1.5-.17-3.06-.75-3.06-3.332 0-.736.262-1.336.692-1.808-.07-.17-.3-.854.07-1.780 0 0 .566-.18 1.86.692.536-.148 1.1-.222 1.664-.225.564.003 1.128.077 1.664.225 1.294-.872 1.86-.-692 1.86-.692.372.926.14 1.61.07 1.78.43.472.692 1.072.692 1.808 0 2.587-1.564 3.16-3.076 3.32-.24.208-.46.503-.46.993 0 1.703-.015 2.58-.015 2.926 0 .267.18.575.688.484C17.136 18.146 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        <span>GitHub Profile</span>
                     </a>
                 </div>
             </section>
         </main>
 
+        <!-- Footer -->
         <footer class="text-center py-8 mt-12 text-[var(--medium-gray)] rounded-xl" style="background: rgba(18, 18, 18, 0.95) !important;">
             <p class="mb-2">&copy; 2024 Bais Sabu. All rights reserved.</p>
             <p>Built with <span class="text-[var(--primary)]">&hearts;</span> and a passion for Cybersecurity</p>
